@@ -8,6 +8,10 @@
       href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Montserrat&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/gsap@3.12.2/dist/gsap.min.js"></script>
     <style>
@@ -25,7 +29,7 @@
     </style>
   </head>
   <body
-    class="min-h-screen flex items-center justify-center p-6 overflow-hidden"
+    class="min-h-screen flex items-center justify-center p- pb-24 overflow-hidden"
   >
     <div class="fixed-width mx-auto text-center">
       <!-- Header -->
@@ -51,13 +55,15 @@
       <!-- Content -->
       <div
         id="menuContent"
-        class="transition-all duration-500 max-h-[75vh] overflow-y-auto px-4 text-left mx-auto"
+        class="transition-all duration-500 max-h-[75vh] mb-24 overflow-y-auto px-4 text-left mx-auto"
       >
         <!-- Menu FR -->
         <div id="fr" class="space-y-6">
           <section>
-            <h2 class="text-2xl text-pink-700 mb-2">Soft Drinks</h2>
-            <ul class="list-disc ml-6 text-gray-700">
+            <h2 class="text-2xl text-pink-700 mb-2">
+              <i class="fas fa-glass-water mr-2"></i>Soft Drinks
+            </h2>
+            <ul class="ml-6 text-gray-700">
               <li>Coca Cola</li>
               <li>Fanta</li>
               <li>Redbull</li>
@@ -68,56 +74,108 @@
 
           <section>
             <h2 class="text-2xl text-pink-700 mb-2">
-              Cocktails
-              <span class="text-sm text-gray-500"
-                >🍸 (V) Option avec alcool</span
-              >
+              <i class="fas fa-cocktail mr-2"></i>Cocktails
+              <span class="text-sm text-gray-500">
+                <i class="fas fa-leaf text-green-600"></i> avec alcool
+              </span>
             </h2>
-            <ul class="list-disc ml-6 text-gray-700">
-              <li>Mojito Classique (+ fraise et pomme) 🍸</li>
-              <li>Pina Colada 🍸</li>
-              <li>Sex on the Beach 🍸</li>
-              <li>Gin (lemon ou tonic) 🍸</li>
-              <li>Negroni 🍸</li>
-            </ul>
-          </section>
-
-          <section>
-            <h2 class="text-2xl text-pink-700 mb-2">Bière</h2>
-            <ul class="list-disc ml-6 text-gray-700">
-              <li>Peroni 🍸</li>
-              <li>Heineken 🍸</li>
-              <li>Corona 🍸</li>
-              <li>Desperados 🍸</li>
-            </ul>
-          </section>
-
-          <section>
-            <h2 class="text-2xl text-pink-700 mb-2">Vin</h2>
-            <ul class="list-disc ml-6 text-gray-700">
-              <li>Vin rouge 🍸</li>
-              <li>Vin blanc 🍸</li>
-              <li>Rosé 🍸</li>
-            </ul>
-          </section>
-
-          <section>
-            <h2 class="text-2xl text-pink-700 mb-2">Liqueur</h2>
-            <ul class="list-disc ml-6 text-gray-700">
-              <li>Limoncello 🍸</li>
-              <li>Sambuca 🍸</li>
-              <li>Vecchio Amaro del Capo 🍸</li>
-            </ul>
-          </section>
-
-          <section>
-            <h2 class="text-2xl text-pink-700 mb-2">Mocktails</h2>
-            <ul class="list-disc ml-6 text-gray-700">
-              <li>Lydie (eau, citron, menthe, miel au gingembre)</li>
+            <ul class="ml-6 text-gray-700">
               <li>
-                Rouge pétillant (fraise, citron vert, eau pétillante, menthe)
+                Mojito Classique <i class="fas fa-leaf text-green-600"></i
+                ><br /><span class="text-sm italic text-gray-500"
+                  >(jus de citron vert, sucre de canne, rhum clair,
+                  menthe)</span
+                >
               </li>
-              <li>Pomme verte frizz (pomme verte, soda/tonic, citron vert)</li>
+              <li>
+                Mojito Fraise/Pomme <i class="fas fa-leaf text-green-600"></i
+                ><br /><span class="text-sm italic text-gray-500"
+                  >(jus de citron vert, sucre de canne, rhum clair, menthe,
+                  sirop fraise/pomme)</span
+                >
+              </li>
+              <li>
+                Pina Colada <i class="fas fa-leaf text-green-600"></i
+                ><br /><span class="text-sm italic text-gray-500"
+                  >(rhum clair, ananas, coco)</span
+                >
+              </li>
+              <li>
+                Sex on the Beach <i class="fas fa-leaf text-green-600"></i
+                ><br /><span class="text-sm italic text-gray-500"
+                  >(orange, cranberry, pêche, vodka)</span
+                >
+              </li>
+              <li>
+                Gin<br /><span class="text-sm italic text-gray-500"
+                  >(lemon ou tonic)</span
+                >
+              </li>
+              <li>
+                Negroni<br /><span class="text-sm italic text-gray-500"
+                  >(vermouth rouge, campari, gin)</span
+                >
+              </li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 class="text-2xl text-pink-700 mb-2">
+              <i class="fas fa-beer mr-2"></i>Bière
+            </h2>
+            <ul class="ml-6 text-gray-700">
+              <li>Peroni</li>
+              <li>Heineken</li>
+              <li>Corona</li>
+              <li>Desperados</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 class="text-2xl text-pink-700 mb-2">
+              <i class="fas fa-wine-glass mr-2"></i>Vin
+            </h2>
+            <ul class="ml-6 text-gray-700">
+              <li>Vin rouge</li>
+              <li>Vin blanc</li>
+              <li>Rosé</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 class="text-2xl text-pink-700 mb-2">
+              <i class="fas fa-wine-bottle mr-2"></i>Liqueur
+            </h2>
+            <ul class="ml-6 text-gray-700">
+              <li>Limoncello</li>
+              <li>Sambuca</li>
+              <li>Vecchio Amaro del Capo</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 class="text-2xl text-pink-700 mb-2">
+              <i class="fas fa-glass-water mr-2"></i>Mocktails
+            </h2>
+            <ul class="ml-6 text-gray-700">
+              <li>
+                Lydie<br /><span class="text-sm italic text-gray-500"
+                  >(eau, citron, menthe, miel au gingembre)</span
+                >
+              </li>
+              <li>
+                Rouge Pétillant<br /><span class="text-sm italic text-gray-500"
+                  >(jus de fraise, jus de citron vert, eau pétillante,
+                  menthe)</span
+                >
+              </li>
+              <li>
+                Pomme Verte Frizz<br /><span
+                  class="text-sm italic text-gray-500"
+                  >(morceaux et jus de pomme verte, soda ou tonic, jus de citron
+                  vert)</span
+                >
+              </li>
             </ul>
           </section>
         </div>
@@ -125,8 +183,10 @@
         <!-- Menu IT -->
         <div id="it" class="hidden space-y-6">
           <section>
-            <h2 class="text-2xl text-pink-700 mb-2">Soft Drinks</h2>
-            <ul class="list-disc ml-6 text-gray-700">
+            <h2 class="text-2xl text-pink-700 mb-2">
+              <i class="fas fa-glass-water mr-2"></i>Soft Drinks
+            </h2>
+            <ul class="ml-6 text-gray-700">
               <li>Coca Cola</li>
               <li>Fanta</li>
               <li>Redbull</li>
@@ -137,54 +197,106 @@
 
           <section>
             <h2 class="text-2xl text-pink-700 mb-2">
-              Drinks
-              <span class="text-sm text-gray-500"
-                >🍸 (V) Opzione con alcool</span
-              >
+              <i class="fas fa-cocktail mr-2"></i>Cocktails
+              <span class="text-sm text-gray-500">
+                <i class="fas fa-leaf text-green-600"></i> con alcool
+              </span>
             </h2>
-            <ul class="list-disc ml-6 text-gray-700">
-              <li>Mojito Classico (+ fragola e mela) 🍸</li>
-              <li>Piña Colada 🍸</li>
-              <li>Sex on the Beach 🍸</li>
-              <li>Gin (lemon o tonic) 🍸</li>
-              <li>Negroni 🍸</li>
+            <ul class="ml-6 text-gray-700">
+              <li>
+                Mojito Classico <i class="fas fa-leaf text-green-600"></i
+                ><br /><span class="text-sm italic text-gray-500"
+                  >(lime spremuto, zucchero di canna, rum chiaro, menta)</span
+                >
+              </li>
+              <li>
+                Mojito Fragola/Mela <i class="fas fa-leaf text-green-600"></i
+                ><br /><span class="text-sm italic text-gray-500"
+                  >(lime spremuto, zucchero di canna, rum chiaro, menta,
+                  sciroppo fragola/mela)</span
+                >
+              </li>
+              <li>
+                Piña Colada <i class="fas fa-leaf text-green-600"></i
+                ><br /><span class="text-sm italic text-gray-500"
+                  >(rum chiaro, ananas, cocco)</span
+                >
+              </li>
+              <li>
+                Sex on the Beach <i class="fas fa-leaf text-green-600"></i
+                ><br /><span class="text-sm italic text-gray-500"
+                  >(arancia, cranberry, pesca, vodka)</span
+                >
+              </li>
+              <li>
+                Gin<br /><span class="text-sm italic text-gray-500"
+                  >(lemon o tonic)</span
+                >
+              </li>
+              <li>
+                Negroni<br /><span class="text-sm italic text-gray-500"
+                  >(vermouth rosso, campari, gin)</span
+                >
+              </li>
             </ul>
           </section>
 
           <section>
-            <h2 class="text-2xl text-pink-700 mb-2">Birre</h2>
-            <ul class="list-disc ml-6 text-gray-700">
-              <li>Peroni 🍸</li>
-              <li>Heineken 🍸</li>
-              <li>Corona 🍸</li>
-              <li>Desperados 🍸</li>
+            <h2 class="text-2xl text-pink-700 mb-2">
+              <i class="fas fa-beer mr-2"></i>Birre
+            </h2>
+            <ul class="ml-6 text-gray-700">
+              <li>Peroni</li>
+              <li>Heineken</li>
+              <li>Corona</li>
+              <li>Desperados</li>
             </ul>
           </section>
 
           <section>
-            <h2 class="text-2xl text-pink-700 mb-2">Vini</h2>
-            <ul class="list-disc ml-6 text-gray-700">
-              <li>Vino rosso 🍸</li>
-              <li>Vino bianco 🍸</li>
-              <li>Vino rosato 🍸</li>
+            <h2 class="text-2xl text-pink-700 mb-2">
+              <i class="fas fa-wine-glass mr-2"></i>Vini
+            </h2>
+            <ul class="ml-6 text-gray-700">
+              <li>Vino rosso</li>
+              <li>Vino bianco</li>
+              <li>Vino rosato</li>
             </ul>
           </section>
 
           <section>
-            <h2 class="text-2xl text-pink-700 mb-2">Liquori</h2>
-            <ul class="list-disc ml-6 text-gray-700">
-              <li>Limoncello 🍸</li>
-              <li>Sambuca 🍸</li>
-              <li>Vecchio Amaro del Capo 🍸</li>
+            <h2 class="text-2xl text-pink-700 mb-2">
+              <i class="fas fa-wine-bottle mr-2"></i>Liquori
+            </h2>
+            <ul class="ml-6 text-gray-700">
+              <li>Limoncello</li>
+              <li>Sambuca</li>
+              <li>Vecchio Amaro del Capo</li>
             </ul>
           </section>
 
           <section>
-            <h2 class="text-2xl text-pink-700 mb-2">Analcolici</h2>
-            <ul class="list-disc ml-6 text-gray-700">
-              <li>Lydie (acqua, limone, menta, miele allo zenzero)</li>
-              <li>Rosso Frizzante (fragola, lime, acqua frizzante, menta)</li>
-              <li>Melaverde Frizz (melaverde, soda/tonica, lime)</li>
+            <h2 class="text-2xl text-pink-700 mb-2">
+              <i class="fas fa-glass-water mr-2"></i>Mocktails
+            </h2>
+            <ul class="ml-6 text-gray-700">
+              <li>
+                Lydie<br /><span class="text-sm italic text-gray-500"
+                  >(acqua, limone spremuto, menta, miele allo zenzero)</span
+                >
+              </li>
+              <li>
+                Rosso Frizzante<br /><span class="text-sm italic text-gray-500"
+                  >(succo di fragola, succo di lime, acqua frizzante,
+                  menta)</span
+                >
+              </li>
+              <li>
+                Melaverde Frizz<br /><span class="text-sm italic text-gray-500"
+                  >(cubetti e succo di melaverde, soda o tonica, succo di
+                  lime)</span
+                >
+              </li>
             </ul>
           </section>
         </div>
