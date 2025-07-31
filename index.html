@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Menu Mariage – Erica & Giosuè</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/gsap@3.12.2/dist/gsap.min.js"></script>
+    <style>
+      body {
+        font-family: "Montserrat", sans-serif;
+        background: #fffaf7;
+      }
+      h1 {
+        font-family: "Alex Brush", cursive;
+      }
+      .fixed-width {
+        width: 100%;
+        max-width: 700px;
+      }
+    </style>
+  </head>
+  <body
+    class="min-h-screen flex items-center justify-center p-6 overflow-hidden"
+  >
+    <div class="fixed-width mx-auto text-center">
+      <!-- Header -->
+      <h1 class="text-5xl text-pink-800 mb-2">Erica & Giosuè</h1>
+      <p class="text-lg text-gray-600 mb-6">Menu des boissons</p>
+
+      <!-- Switch -->
+      <div class="flex justify-center gap-4 mb-6">
+        <button
+          onclick="switchLang('fr')"
+          class="px-4 py-2 bg-pink-100 rounded hover:bg-pink-200 transition"
+        >
+          🇫🇷 Français
+        </button>
+        <button
+          onclick="switchLang('it')"
+          class="px-4 py-2 bg-pink-100 rounded hover:bg-pink-200 transition"
+        >
+          🇮🇹 Italiano
+        </button>
+      </div>
+
+      <!-- Content -->
+      <div
+        id="menuContent"
+        class="transition-all duration-500 max-h-[75vh] overflow-y-auto px-4 text-left mx-auto"
+      >
+        <!-- Menu FR -->
+        <div id="fr" class="space-y-6">
+          <section>
+            <h2 class="text-2xl text-pink-700 mb-2">Soft Drinks</h2>
+            <ul class="list-disc ml-6 text-gray-700">
+              <li>Coca Cola</li>
+              <li>Fanta</li>
+              <li>Redbull</li>
+              <li>Sprite</li>
+              <li>Thé glacé pêche/citron</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 class="text-2xl text-pink-700 mb-2">
+              Cocktails
+              <span class="text-sm text-gray-500"
+                >🍸 (V) Option avec alcool</span
+              >
+            </h2>
+            <ul class="list-disc ml-6 text-gray-700">
+              <li>Mojito Classique (+ fraise et pomme) 🍸</li>
+              <li>Pina Colada 🍸</li>
+              <li>Sex on the Beach 🍸</li>
+              <li>Gin (lemon ou tonic) 🍸</li>
+              <li>Negroni 🍸</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 class="text-2xl text-pink-700 mb-2">Bière</h2>
+            <ul class="list-disc ml-6 text-gray-700">
+              <li>Peroni 🍸</li>
+              <li>Heineken 🍸</li>
+              <li>Corona 🍸</li>
+              <li>Desperados 🍸</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 class="text-2xl text-pink-700 mb-2">Vin</h2>
+            <ul class="list-disc ml-6 text-gray-700">
+              <li>Vin rouge 🍸</li>
+              <li>Vin blanc 🍸</li>
+              <li>Rosé 🍸</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 class="text-2xl text-pink-700 mb-2">Liqueur</h2>
+            <ul class="list-disc ml-6 text-gray-700">
+              <li>Limoncello 🍸</li>
+              <li>Sambuca 🍸</li>
+              <li>Vecchio Amaro del Capo 🍸</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 class="text-2xl text-pink-700 mb-2">Mocktails</h2>
+            <ul class="list-disc ml-6 text-gray-700">
+              <li>Lydie (eau, citron, menthe, miel au gingembre)</li>
+              <li>
+                Rouge pétillant (fraise, citron vert, eau pétillante, menthe)
+              </li>
+              <li>Pomme verte frizz (pomme verte, soda/tonic, citron vert)</li>
+            </ul>
+          </section>
+        </div>
+
+        <!-- Menu IT -->
+        <div id="it" class="hidden space-y-6">
+          <section>
+            <h2 class="text-2xl text-pink-700 mb-2">Soft Drinks</h2>
+            <ul class="list-disc ml-6 text-gray-700">
+              <li>Coca Cola</li>
+              <li>Fanta</li>
+              <li>Redbull</li>
+              <li>Sprite</li>
+              <li>Thè pesca/limone</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 class="text-2xl text-pink-700 mb-2">
+              Drinks
+              <span class="text-sm text-gray-500"
+                >🍸 (V) Opzione con alcool</span
+              >
+            </h2>
+            <ul class="list-disc ml-6 text-gray-700">
+              <li>Mojito Classico (+ fragola e mela) 🍸</li>
+              <li>Piña Colada 🍸</li>
+              <li>Sex on the Beach 🍸</li>
+              <li>Gin (lemon o tonic) 🍸</li>
+              <li>Negroni 🍸</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 class="text-2xl text-pink-700 mb-2">Birre</h2>
+            <ul class="list-disc ml-6 text-gray-700">
+              <li>Peroni 🍸</li>
+              <li>Heineken 🍸</li>
+              <li>Corona 🍸</li>
+              <li>Desperados 🍸</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 class="text-2xl text-pink-700 mb-2">Vini</h2>
+            <ul class="list-disc ml-6 text-gray-700">
+              <li>Vino rosso 🍸</li>
+              <li>Vino bianco 🍸</li>
+              <li>Vino rosato 🍸</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 class="text-2xl text-pink-700 mb-2">Liquori</h2>
+            <ul class="list-disc ml-6 text-gray-700">
+              <li>Limoncello 🍸</li>
+              <li>Sambuca 🍸</li>
+              <li>Vecchio Amaro del Capo 🍸</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 class="text-2xl text-pink-700 mb-2">Analcolici</h2>
+            <ul class="list-disc ml-6 text-gray-700">
+              <li>Lydie (acqua, limone, menta, miele allo zenzero)</li>
+              <li>Rosso Frizzante (fragola, lime, acqua frizzante, menta)</li>
+              <li>Melaverde Frizz (melaverde, soda/tonica, lime)</li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <!-- JS Switch + GSAP -->
+    <script>
+      function switchLang(lang) {
+        const fr = document.getElementById("fr");
+        const it = document.getElementById("it");
+        const content = document.getElementById("menuContent");
+
+        const show = lang === "fr" ? fr : it;
+        const hide = lang === "fr" ? it : fr;
+
+        gsap.to(hide, {
+          opacity: 0,
+          duration: 0.3,
+          onComplete: () => {
+            hide.classList.add("hidden");
+            show.classList.remove("hidden");
+            gsap.fromTo(show, { opacity: 0 }, { opacity: 1, duration: 0.4 });
+          },
+        });
+      }
+    </script>
+  </body>
+</html>
