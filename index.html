@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Menu Mariage – Erica & Giosuè</title>
+    <title>Erica & Giosuè</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Montserrat&display=swap"
       rel="stylesheet"
@@ -29,10 +29,15 @@
     </style>
   </head>
   <body class="min-h-screen flex items-center justify-center overflow-hidden">
-    <div class="fixed-width mx-auto text-center pb-2">
+    <div class="fixed-width mx-auto text-center">
       <!-- Header -->
-      <h1 class="text-5xl text-pink-800 mb-2">Erica & Giosuè</h1>
-      <p class="text-lg text-gray-600 mb-6">Menu des boissons</p>
+      <h1 class="text-5xl text-pink-800 mb-2 pt-2">Erica & Giosuè</h1>
+      <p
+        id="subtitle"
+        class="text-lg text-gray-600 mb-6 transition-all duration-500"
+      >
+        Menu des boissons
+      </p>
 
       <!-- Switch -->
       <div class="flex justify-center gap-4 mb-6">
@@ -53,7 +58,7 @@
       <!-- Content -->
       <div
         id="menuContent"
-        class="transition-all duration-500 max-h-[75vh] mb-24 overflow-y-auto px-4 text-left mx-auto"
+        class="transition-all duration-500 max-h-[75vh] mb-2 overflow-y-auto px-4 text-left mx-auto"
       >
         <!-- Menu FR -->
         <div id="fr" class="space-y-6">
@@ -303,13 +308,33 @@
 
     <!-- JS Switch + GSAP -->
     <script>
+      const subtitles = {
+        fr: "Menu des boissons",
+        it: "Menu delle bevande",
+      };
+
+      let currentLang = "fr";
+      let autoSwitchInterval;
+
       function switchLang(lang) {
         const fr = document.getElementById("fr");
         const it = document.getElementById("it");
         const content = document.getElementById("menuContent");
+        const subtitle = document.getElementById("subtitle");
 
         const show = lang === "fr" ? fr : it;
         const hide = lang === "fr" ? it : fr;
+        currentLang = lang;
+
+        // Update subtitle with fade effect
+        gsap.to(subtitle, {
+          opacity: 0,
+          duration: 0.3,
+          onComplete: () => {
+            subtitle.textContent = subtitles[lang];
+            gsap.to(subtitle, { opacity: 1, duration: 0.3 });
+          },
+        });
 
         gsap.to(hide, {
           opacity: 0,
@@ -321,6 +346,61 @@
           },
         });
       }
+
+      // Auto switch subtitle every 4 seconds
+      function startAutoSwitch() {
+        autoSwitchInterval = setInterval(() => {
+          const nextLang = currentLang === "fr" ? "it" : "fr";
+          currentLang = nextLang;
+
+          // Only update subtitle with GSAP effect
+          const subtitle = document.getElementById("subtitle");
+          gsap
+            .timeline()
+            .to(subtitle, {
+              opacity: 0,
+              y: -10,
+              duration: 0.4,
+              ease: "power2.out",
+            })
+            .call(() => {
+              subtitle.textContent = subtitles[nextLang];
+            })
+            .to(subtitle, {
+              opacity: 0,
+              y: 10,
+              duration: 0,
+            })
+            .to(subtitle, {
+              opacity: 1,
+              y: 0,
+              duration: 0.4,
+              ease: "power2.in",
+            });
+        }, 4000);
+      }
+
+      // Stop auto switch when user manually switches
+      function stopAutoSwitch() {
+        if (autoSwitchInterval) {
+          clearInterval(autoSwitchInterval);
+        }
+      }
+
+      // Start auto switch on page load
+      document.addEventListener("DOMContentLoaded", () => {
+        startAutoSwitch();
+      });
+
+      // Stop auto switch when user clicks language buttons
+      document.addEventListener("click", (e) => {
+        if (
+          e.target.onclick &&
+          e.target.onclick.toString().includes("switchLang")
+        ) {
+          stopAutoSwitch();
+        }
+      });
     </script>
   </body>
 </html>
