@@ -18,6 +18,19 @@
       body {
         font-family: "Montserrat", sans-serif;
         background: #fffaf7;
+        position: relative;
+      }
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url("paper.jpg") no-repeat center center;
+        background-size: cover;
+        opacity: 0.4;
+        z-index: -1;
       }
       h1 {
         font-family: "Alex Brush", cursive;
@@ -79,7 +92,8 @@
             <h2 class="text-2xl text-pink-700 mb-2">
               <i class="fas fa-cocktail mr-2"></i>Cocktails
               <span class="text-sm text-gray-500">
-                <i class="fas fa-leaf text-green-600"></i> avec alcool
+                <i class="fas fa-leaf text-green-600"></i> possibilité sans
+                alcool
               </span>
             </h2>
             <ul class="ml-6 text-gray-700">
@@ -98,7 +112,7 @@
                 >
               </li>
               <li>
-                Pina Colada <i class="fas fa-leaf text-green-600"></i
+                Piña Colada <i class="fas fa-leaf text-green-600"></i
                 ><br /><span class="text-sm italic text-gray-500"
                   >(rhum clair, ananas, coco)</span
                 >
@@ -139,8 +153,8 @@
               <i class="fas fa-wine-glass mr-2"></i>Vin
             </h2>
             <ul class="ml-6 text-gray-700">
-              <li>Vin rouge</li>
-              <li>Vin blanc</li>
+              <li>Freschello rouge</li>
+              <li>Freschello blanc</li>
               <li>Rosé</li>
             </ul>
           </section>
@@ -202,7 +216,7 @@
             <h2 class="text-2xl text-pink-700 mb-2">
               <i class="fas fa-cocktail mr-2"></i>Cocktails
               <span class="text-sm text-gray-500">
-                <i class="fas fa-leaf text-green-600"></i> con alcool
+                <i class="fas fa-leaf text-green-600"></i> possibile senza alcol
               </span>
             </h2>
             <ul class="ml-6 text-gray-700">
@@ -261,9 +275,9 @@
               <i class="fas fa-wine-glass mr-2"></i>Vini
             </h2>
             <ul class="ml-6 text-gray-700">
-              <li>Vino rosso</li>
-              <li>Vino bianco</li>
-              <li>Vino rosato</li>
+              <li>Freschello rosso</li>
+              <li>Freschello bianco</li>
+              <li>Vino Rosato</li>
             </ul>
           </section>
 
@@ -280,7 +294,7 @@
 
           <section>
             <h2 class="text-2xl text-pink-700 mb-2">
-              <i class="fas fa-glass-water mr-2"></i>Mocktails
+              <i class="fas fa-glass-water mr-2"></i>Analcolici
             </h2>
             <ul class="ml-6 text-gray-700">
               <li>
